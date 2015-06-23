@@ -1,0 +1,45 @@
+{% extends 'bootstrap3/bootstrap3.html' %}
+
+{% load bootstrap3 %}
+
+{% block bootstrap3_content %}
+<div class="container">
+{% bootstrap_messages %}
+{% block content %}(no content){% endblock %}
+</div>
+{% endblock %}
+
+{% block bootstrap3_extra_head %}
+<link href="http://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Roboto+Slab:400,100,300,700|Droid+Serif:400,700,400italic,700italic|Lato:400,700,400italic,700italic|Montserrat:400,700" rel="stylesheet" type="text/css">
+<style media='all' type='text/css'>
+
+body {
+    background-color: #f7f7f7;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+@media (min-width: 768px) {
+    .container {
+        margin-top: 40px;
+    }
+}
+
+.thanks-text {
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.radio {
+    display: inline;
+    margin-right: 20px;
+    top: 3px;
+}
+
+.btn-primary {
+    background-color: #5c00b3;
+    border: 0;
+    border-radius: 3px;
+}
+
+</style>
+{% endblock %}

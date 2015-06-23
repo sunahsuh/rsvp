@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block bootstrap3_title %}Find Your Invitation{% endblock %}
+
+{% block content %}
+{% load bootstrap3 %}
+  <h1 class="h3">Search for your Invitation</h1>
+  <form action='' method='post' class="form">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+
+  {% buttons %}
+  <button type="submit" class="btn btn-primary">
+    Search
+  </button> 
+  {% endbuttons %}
+  </form>
+{% endblock %}

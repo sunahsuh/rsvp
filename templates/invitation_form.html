@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block bootstrap3_title %}RSVP{% endblock %}
+
+{% block content %}
+{% load bootstrap3 %}
+<h1 class="h2">Respond to Your Invitation</h1>
+<form action='' method='post' class="form">
+  {% csrf_token %}
+  {{ inlines.0.management_form }}
+  {% for guest_form in inlines.0 %}
+  <div class="row">
+    <h5 class='bold text-muted col-md-12'>Guest {{ forloop.counter }}</h5>
+      <div class="col-md-4 form-group">
+        {% bootstrap_field guest_form.first_name %}
+      </div>
+      <div class='col-md-4 form-group'>
+        {% bootstrap_field guest_form.last_name %}
+      </div>
+      <div class='col-md-4 form-group'>
+        {% bootstrap_field guest_form.rsvp %}
+      </div>
+        {% bootstrap_field guest_form.id %}
+        {% bootstrap_field guest_form.invitation %}
+    </div>
+  {% endfor %}
+  <div class="row">
+    <div class='col-md-12'>
+      {% bootstrap_field form.hashtag_suggestion %}
+    </div>
+  </div>
+  <div class="row">
+    <div class='col-md-12'>
+      {% bootstrap_field form.song_suggestions %}
+    </div>
+  </div>
+  {% buttons %}
+  <button type="submit" class="btn btn-primary">
+    Respond
+  </button> 
+  {% endbuttons %}
+</form>
+{% endblock %}
